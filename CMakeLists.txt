@@ -42,6 +42,8 @@ set(LIBIPC_PROJECT_DIR     ${PROJECT_SOURCE_DIR})
 # Unicode Support
 add_definitions(-DUNICODE -D_UNICODE)
 
+include(GNUInstallDirs)
+
 add_subdirectory(src)
 
 if (LIBIPC_BUILD_TESTS)
@@ -70,5 +72,5 @@ endif()
 
 install(
     DIRECTORY "include/"
-    DESTINATION "include"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
 )
