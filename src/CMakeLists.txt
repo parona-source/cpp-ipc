@@ -62,7 +62,7 @@ install(
 install(EXPORT cpp-ipc-targets
 	FILE cpp-ipc-targets.cmake
 	NAMESPACE cpp-ipc::
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cpp-ipc
+	DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cpp-ipc
 )
 
 file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/cpp-ipc-config.cmake.in"
@@ -70,7 +70,7 @@ file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/cpp-ipc-config.cmake.in"
 include("${CMAKE_CURRENT_LIST_DIR}/cpp-ipc-targets.cmake")
 ]])
 configure_file("${CMAKE_CURRENT_BINARY_DIR}/cpp-ipc-config.cmake.in" "${CMAKE_CURRENT_BINARY_DIR}/cpp-ipc-config.cmake" @ONLY)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cpp-ipc-config.cmake DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cpp-ipc)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cpp-ipc-config.cmake DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cpp-ipc)
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
@@ -78,4 +78,4 @@ write_basic_package_version_file(
 	VERSION ${PACKAGE_VERSION}
 	COMPATIBILITY AnyNewerVersion
 )
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cppIpcConfigVersion.cmake DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cpp-ipc)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cppIpcConfigVersion.cmake DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cpp-ipc)
